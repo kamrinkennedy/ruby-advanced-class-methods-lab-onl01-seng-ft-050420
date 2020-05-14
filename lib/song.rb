@@ -27,6 +27,7 @@ class Song
         return song
       end
     end
+    false
   end
   
   def self.all
