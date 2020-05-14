@@ -36,8 +36,10 @@ class Song
     end
   end
   
-  def self.new_from_filename
-    
+  def self.new_from_filename(filename)
+    song = new
+    song.name = filename.split("-")[0]
+    title = filename.split("")
   end
   
   def self.alphabetical
