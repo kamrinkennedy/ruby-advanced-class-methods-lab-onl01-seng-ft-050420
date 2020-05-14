@@ -42,6 +42,13 @@ class Song
     title = filename.split(Regexp.union("-", "."))[1]
   end
   
+  def self.create_from_filename(filename)
+    song = new
+    song.name = filename.split("-")[0]
+    title = filename.split(Regexp.union("-", "."))[1]
+    Song.all << song
+  end
+  
   def self.alphabetical
     Song.all.sort_by{|song| song.name}
   end
