@@ -38,14 +38,14 @@ class Song
   
   def self.new_from_filename(filename)
     song = new
-    song.artist_name = filename.split("-")[0]
+    song.artist_name = filename.split("-")[0].strip
     song.name = filename.split(Regexp.union("-", "."))[1].strip
     return song
   end
   
   def self.create_from_filename(filename)
     song = new
-    song.artist_name = filename.split("-")[0]
+    song.artist_name = filename.split("-")[0].strip
     song.name = filename.split(Regexp.union("-", "."))[1].strip
     Song.all << song
   end
