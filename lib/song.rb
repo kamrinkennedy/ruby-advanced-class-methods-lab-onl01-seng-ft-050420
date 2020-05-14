@@ -39,7 +39,7 @@ class Song
   def self.new_from_filename(filename)
     song = new
     song.name = filename.split("-")[0]
-    title = filename.split("")
+    title = filename.split(Regexp.union("-", "."))[1]
   end
   
   def self.alphabetical
